@@ -6,8 +6,8 @@ bool saveMqttConfigToSPIFFS(const char* server, int port, const char* user, cons
   
   bool res = false;  
 
-  DynamicJsonBuffer jsonBuffer;
-  JsonObject& json = jsonBuffer.createObject();
+  DynamicJsonDocument jsonBuffer{MAX_STR_LEN * 3};
+  JsonObject json = jsonBuffer.to<JsonObject>();
 
   json[MQTT_CONFIG_SERVER] = server;
   json[MQTT_CONFIG_PORT] = port;

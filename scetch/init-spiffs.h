@@ -33,7 +33,7 @@ bool saveJson(const char* fileName, JsonObject& json) {
   
   File f = SPIFFS.open(fileName, FILE_WRITE);
   if (f) {
-    json.printTo(f);    
+    serializeJson(json, f);    
     f.close();
     res = true;
   } else {
