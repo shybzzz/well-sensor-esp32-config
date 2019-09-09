@@ -10,8 +10,8 @@ bool saveSensorConfigToSPIFFS(uint8_t sensorType) {
 
   bool res = false;
 
-  DynamicJsonBuffer jsonBuffer;
-  JsonObject& json = jsonBuffer.createObject();
+  DynamicJsonDocument jsonBuffer{MAX_STR_LEN};
+  JsonObject json = jsonBuffer.to<JsonObject>();
 
   json[SENSOR_CONFIG_TYPE] = sensorType;
   res = saveJson(sensorFileName, json);

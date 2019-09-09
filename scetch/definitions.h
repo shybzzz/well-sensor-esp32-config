@@ -24,4 +24,6 @@
 #define SENSOR_GUT800                               3u
 #define SENSOR_INA250A2PW                           4u
 
+//esp configs
+#define MEASUREMENT_DELAY                           ("delay")
 #endif
